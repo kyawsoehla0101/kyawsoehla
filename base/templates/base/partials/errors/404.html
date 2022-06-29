@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Qazi Leo</title>
+    <link rel="stylesheet" href="{% static 'styles/css/main.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    {% include 'base/layouts/navbar.html' %}
+    <div class="bg-custom py-5" style="height: 100vh;">
+       <div class="container">
+        <div class="text-danger text-center">
+           <span class="text-danger fs-1">4</span>
+           <span class="text-white fs-1">0</span>
+           <span class="text-danger fs-1">4</span>
+            <p>Page Not Found</p>
+
+           <a href="{% url 'home' %}" class="btn btn-primary btn-sm">HOME</a>
+        </div>
+       </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

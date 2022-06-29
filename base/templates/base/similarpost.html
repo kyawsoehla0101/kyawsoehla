@@ -1,0 +1,30 @@
+<div class="text-center">
+  <h4 class="text-white fw-bold py-2">SIMILAR POSTS</h4>
+  <div class="line mx-auto"></div>
+  <div class="line-span mx-auto bg-danger"></div>
+  <br />
+</div>
+         {% if similarposts %}
+         {% for post in similarposts %}
+         <div class="card bg-color mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4" style="background-image:url({{post.thumbnail.url}});background-size:cover;">
+              {% comment %} <img src={{post.thumbnail.url}} class="img-fluid rounded-start" alt="..."> {% endcomment %}
+            </div>
+            <div class="col-md-8 ">
+              <div class="card-body">
+                <a href="{% url 'detail' post.id %}" class="card-title text-white text-decoration-none">{{post.title | truncatechars:40}}</a>
+                <p class="card-text"><small class="text-secondary" style="font-size:12px">Last updated {{post.created | timesince}} ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+         {% else %}
+         <div style="height:100vh" class="py-5 text-center">
+            <h1 class="text-danger">Post Not Found</h3>
+            <h5 class="text-white">
+                There is no posts on this category!
+            </h5>
+         </div>
+         {% endif %}

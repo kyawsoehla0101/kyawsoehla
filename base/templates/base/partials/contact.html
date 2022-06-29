@@ -1,0 +1,66 @@
+{% load static %}
+<div class="text-center" id="contact-me">
+    <h4 class="text-white fw-bold py-2">CONTACT ME</h4>
+    <div class="line mx-auto"></div>
+    <div class="line-span mx-auto bg-danger"></div>
+    <br />
+  </div>
+  <div class="row bg-color rounded p-4 gx-5 w-75 mx-auto">
+    <div class="col-12 col-md-6 col-lg-6 text-white">
+      <h4>GET IN TOUCH ME!</h4>
+      <div class="contact-content">
+        <a href="" class="text-primary fs-5"
+          ><i class="bx bxl-facebook"></i
+        ></a>
+        <a href="" class="text-primary fs-5"
+          ><i class="bx bxl-twitter"></i
+        ></a>
+        <a href="" class="text-danger fs-5"
+          ><i class="bx bxl-youtube"></i
+        ></a>
+        <a href="" class="text-danger fs-5"
+          ><i class="bx bxl-google-plus"></i
+        ></a>
+        <a href="" class="text-primary fs-5"><i class="bx bxl-vk"></i></a>
+      </div>
+      <div class="py-5">
+        <h5 class="text-secondary">Send Your Email Here</h5>
+        <img
+          src="{% static 'images/mail.jpg' %}"
+          class="img-fluid py-3"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 p-3 card text-secondary">
+      <form action="">
+        <div class="form-group">
+          <label for="" class="form-label">Name</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="form-group pt-3">
+          <label for="" class="form-label">Email</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="form-group pt-2">
+          <label for="" class="form-label">Subject</label>
+          <input type="text" class="form-control" />
+        </div>
+        <div class="form-group pt-2">
+          <label for="" class="form-label">Message</label>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="4"
+            class="form-control"
+          ></textarea>
+        </div>
+        <div class="form-group pt-2">
+          <button type="submit" class="btn btn-sm btn-danger">
+            Send <i class="bx bx-send"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

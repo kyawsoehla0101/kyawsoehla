@@ -1,0 +1,39 @@
+<div class="text-center">
+    <h4 class="text-white fw-bold py-2">RECENT POSTS</h4>
+    <div class="line mx-auto"></div>
+    <div class="line-span mx-auto bg-danger"></div>
+    <br />
+  </div>
+<div class="row g-3 bg-color rounded">
+    {% for post in recentposts %}
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card">
+        <div
+          class="card-img"
+          style="background-image:url({{post.thumbnail.url}});background-size:cover;"
+        >
+          <span class="text-white bg-danger p-1 text"
+            >{{post.category}}</span
+          >
+          <span class="text-white bg-danger p-1 text float-end"
+            >{{post.created | timesince}} ago</span
+          >
+          {% comment %}
+          <img
+            src="{{post.thumbnail.url}}"
+            class="card-img-top"
+            alt="{{post.title}}"
+          />
+          {% endcomment %}
+        </div>
+        <div class="card-body">
+          <a
+            href="{% url 'detail' post.id %}"
+            class="text-decoration-none"
+            >{{ post.title|truncatechars:30}}</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>

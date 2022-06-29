@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Qazi Leo</title>
+    <link rel="stylesheet" href="{% static 'styles/css/main.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    
+    </style>
+  </head>
+  <body>
+    {% include 'base/layouts/navbar.html' %}
+    <div class="bg-custom py-5">
+      <div class="container py-3">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="social-content">
+              <a href="" class="text-primary fs-3"
+                ><i class="bx bxl-facebook"></i
+              ></a>
+              <a href="" class="text-primary fs-3"
+                ><i class="bx bxl-twitter"></i
+              ></a>
+              <a href="" class="text-danger fs-3"
+                ><i class="bx bxl-youtube"></i
+              ></a>
+              <a href="" class="text-danger fs-3"
+                ><i class="bx bxl-google-plus"></i
+              ></a>
+              <a href="" class="text-primary fs-3"><i class="bx bxl-vk"></i></a>
+            </div>
+            <h1 class="text-white py-3 fw-bold">I am Kyaw Soe Hla</h1>
+            <p class="text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+              aspernatur impedit odit iste vitae doloremque nihil aliquam.
+              Itaque doloribus ipsam optio deleniti rem. Nemo debitis impedit
+              laborum officiis possimus doloremque corrupti provident eos est
+              quidem dolor fuga, quasi veritatis atque in aspernatur excepturi
+              quae deserunt accusantium. Ratione tenetur quo, ipsum accusantium,
+              quas consectetur rerum dignissimos est inventore et non similique
+              eaque dicta corrupti blanditiis consequatur a nisi reprehenderit
+              commodi in!
+            </p>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6 justify-content-center">
+            <div class="mx-auto profile">
+              <img
+                src="{% static 'images/qazileo.jpg' %}"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-container">
+      <div class="container">
+        {% include 'base/partials/latestnews.html' %}
+        {% include 'base/partials/about.html' %}
+        <br />
+        {% include 'base/partials/image.html' %}
+        
+        <br />
+        {% include 'base/partials/contact.html' %}
+        <br /><br />
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Qazi Leo</title>
+    <link rel="stylesheet" href="{% static 'styles/css/main.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    {% include 'base/layouts/navbar.html' %}
+<div class="bg-custom py-5">
+    <div class="container">
+        <div class="text-center">
+            <h4 class="text-white fw-bold py-2 text-uppercase">{{slug}}</h4>
+            <div class="line mx-auto"></div>
+            <div class="line-span mx-auto bg-danger"></div>
+            <br />
+          </div>
+         {% if tagposts %}
+         <div class="row g-3  rounded">
+            {% for post in tagposts %}
+            <div class="col-12 col-md-4 col-lg-4">
+              <div class="card">
+                <div
+                  class="card-img"
+                  style="background-image:url({{post.thumbnail.url}});background-size:cover;"
+                >
+                  <span class="text-white bg-danger p-1 text"
+                    >{{post.category}}</span
+                  >
+                  <span class="text-white bg-danger p-1 text float-end"
+                    >{{post.created | timesince}} agos</span
+                  >
+                  {% comment %}
+                  <img
+                    src="{{post.thumbnail.url}}"
+                    class="card-img-top"
+                    alt="{{post.title}}"
+                  />
+                  {% endcomment %}
+                </div>
+                <div class="card-body">
+                  <a
+                    href="{% url 'detail' post.id %}"
+                    class="text-decoration-none"
+                    >{{ post.title|truncatechars:40}}</a
+                  >
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+         @{% else %}
+         <div style="height:100vh" class="py-5 text-center">
+            <h1 class="text-danger">Post Not Found</h3>
+            <h5 class="text-white">
+                There is no posts on this category!
+            </h5>
+         </div>
+         {% endif %}
+    </div>
+</div>
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+  crossorigin="anonymous"
+></script>
+</body>
+</html>
